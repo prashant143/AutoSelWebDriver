@@ -8,7 +8,7 @@ public class FluetWaitExa {
 		System.setProperty("webdriver.chrome.driver", "//Users//prashantvaghela//Documents//SeleniumWork//chromedriver");
 		WebDriver driver = new ChromeDriver();
 		driver.get("https://www.google.com");
-		
+		driver.close();
 		
 		
 
