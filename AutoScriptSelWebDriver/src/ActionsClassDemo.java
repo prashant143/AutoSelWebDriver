@@ -13,6 +13,11 @@ public class ActionsClassDemo {
 				"//Users//prashantvaghela//Documents//SeleniumWork//chromedriver");
 		WebDriver driver = new ChromeDriver();
 		driver.manage().window().maximize();
+		/*
+		 * Use deleteCokieNamed method when you have scenario like 
+		 * logout the session and click on any link and redirect to the login page to verify 
+		 */
+		driver.manage().deleteCookieNamed("SessionKey");
 		driver.get("https://www.amazon.ca");
 		WebElement signInMove = driver.findElement(By.cssSelector("span[class='nav-line-2 nav-long-width']"));
 		WebElement searchBoxMoveClick = driver.findElement(By.id("twotabsearchtextbox"));
