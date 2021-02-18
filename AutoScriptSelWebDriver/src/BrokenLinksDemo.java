@@ -1,9 +1,18 @@
+
+
+import java.io.IOException;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.URL;
+
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+
 public class BrokenLinksDemo {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws MalformedURLException, IOException {
 		// TODO Auto-generated method stub
 		System.setProperty("webdriver.chrome.driver",
 				"//Users//prashantvaghela//Documents//SeleniumWork//chromedriver");
@@ -22,8 +31,9 @@ public class BrokenLinksDemo {
 		 * Step 1 - get all URL and gets you the status code
 		 * if status code us > 400 then URL is not working -> Link which is tied up to the anchor tag
 		 */
+		String url = driver.findElement(By.cssSelector("a[href*='soapui']")).getAttribute("href");
+		HttpURLConnection conn = (HttpURLConnection) new URL(url).openConnection();
 		
-		driver.close();
 	}
 
 }
