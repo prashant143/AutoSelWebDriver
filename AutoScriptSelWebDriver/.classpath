@@ -18,5 +18,6 @@
 	<classpathentry kind="lib" path="/Users/prashantvaghela/Documents/SeleniumWork/commons-io-2.8.0/commons-io-2.8.0-test-sources.jar"/>
 	<classpathentry kind="lib" path="/Users/prashantvaghela/Documents/SeleniumWork/commons-io-2.8.0/commons-io-2.8.0-tests.jar"/>
 	<classpathentry kind="lib" path="/Users/prashantvaghela/Documents/SeleniumWork/commons-io-2.8.0/commons-io-2.8.0.jar"/>
+	<classpathentry kind="lib" path="/Users/prashantvaghela/Documents/SeleniumWork/testng-6.14.3.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
