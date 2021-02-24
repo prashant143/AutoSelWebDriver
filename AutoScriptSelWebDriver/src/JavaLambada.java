@@ -54,5 +54,6 @@ public class JavaLambada {
 	public void streamMap() {
 		Stream.of("Amit", "Prashant", "Snehal", "Adam").filter(s->s.endsWith("t"))
 		.map(s->s.toUpperCase()).forEach(s->System.out.println(s));
+		
 	}
 }
