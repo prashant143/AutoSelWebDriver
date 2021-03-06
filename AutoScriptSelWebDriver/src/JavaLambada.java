@@ -1,6 +1,11 @@
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Collector;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class JavaLambada {
@@ -52,8 +57,40 @@ public class JavaLambada {
 	 */
 	@Test
 	public void streamMap() {
-		Stream.of("Amit", "Prashant", "Snehal", "Adam").filter(s->s.endsWith("t"))
+
+		ArrayList<String> names = new ArrayList<String>();
+		names.add("Jayesh");
+		names.add("Harshil");
+		names.add("Vipul");
+		names.add("Navya");
+		
+		List<String> familyName = Arrays.asList("Jinal", "Shweta","Kaushik","Dhaval");
+		
+		Stream.of("Amit", "Prashant", "Snehal", "Adam").filter(s->s.endsWith("t"));
+		
+		Stream.of("Amit", "Prashant", "Snehal", "Adam").filter(s->s.startsWith("A")).sorted()
 		.map(s->s.toUpperCase()).forEach(s->System.out.println(s));
+		
+		Stream<String> combineNames = Stream.concat(names.stream(), familyName.stream());
+		
+		//combineNames.sorted().forEach(s->System.out.println(s));
+		
+		boolean flag = combineNames.anyMatch(s->s.equalsIgnoreCase("Dhaval"));
+		Assert.assertTrue(flag);
+		
+	}
+	
+	@Test
+	public void streamCollect()
+	{
+		List<String> nameValue = Stream.of("Jinal", "Shweta","Kaushik","Dhaval")
+				.filter(s->s.endsWith("l")).map(s->s.toUpperCase()).collect(Collectors.toList());
+		System.out.println(nameValue.get(0));
+		
+		//print unique number from the array list and sort the array
+		List<Integer> numberValue = Arrays.asList(2,4,5,2,6,7,8,6,9,0,3,2,1,3,1);
+		numberValue.stream().sorted().distinct().forEach(s->System.out.println(s));
+		List<Integer> li =  numberValue.stream().sorted().distinct().collect(Collectors.toList());
 		
 	}
 }
